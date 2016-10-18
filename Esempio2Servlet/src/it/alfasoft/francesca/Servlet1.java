@@ -31,8 +31,10 @@ public class Servlet1 extends HttpServlet {
 		if(password.equals("123")){
 
 //			response.sendRedirect("benvenuto.html");
+			PrintWriter writer=response.getWriter();
+			writer.println("Password corretta!"+"<br>");
 			RequestDispatcher rds= request.getRequestDispatcher("Servlet2");
-			rds.forward(request, response);
+			rds.include(request, response);
 			
 		}else{
 			RequestDispatcher rds= request.getRequestDispatcher("login.html");

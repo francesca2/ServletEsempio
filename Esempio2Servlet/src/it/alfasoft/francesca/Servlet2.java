@@ -25,7 +25,12 @@ public class Servlet2 extends HttpServlet {
 		String password=request.getParameter("password");
 		
 		PrintWriter writer=response.getWriter();
-		writer.println("Benvenuta " + username);
+//		writer.println("Benvenuta " + username);
+		
+		String str="<table>"+"<thead>"+"<tr>"+"<th> Username </th>"+"<th> Password </th>"+"</tr>"+"</thead>"+"<tr>"+"<td> Francesca </td>"+
+		"<td> 123 </td>"+"</tr>"+"<tr>"+"<td> Paperino </td>"+"<td> 468 </td>"+"</tr>"+"</table>";
+		
+		writer.println(str);
 	}
 
 	/**
