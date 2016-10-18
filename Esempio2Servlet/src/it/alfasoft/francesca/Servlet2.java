@@ -25,7 +25,7 @@ public class Servlet2 extends HttpServlet {
 		String password=request.getParameter("password");
 		
 		PrintWriter writer=response.getWriter();
-		writer.println("Benvenuto " + username);
+		writer.println("Benvenuta " + username);
 	}
 
 	/**

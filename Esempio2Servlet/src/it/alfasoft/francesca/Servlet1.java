@@ -25,16 +25,21 @@ public class Servlet1 extends HttpServlet {
 		
 		response.setContentType("text/html");
 		String username=request.getParameter("username");
-		String password=request.getParameter("password");
+		String password=request.getParameter("password"); 
 		
-		RequestDispatcher rds= request.getRequestDispatcher("Servlet2");
+		
 		if(password.equals("123")){
 
 //			response.sendRedirect("benvenuto.html");
+			RequestDispatcher rds= request.getRequestDispatcher("Servlet2");
 			rds.forward(request, response);
 			
 		}else{
-			response.sendRedirect("login.html");
+			RequestDispatcher rds= request.getRequestDispatcher("login.html");
+//			response.sendRedirect("login.html");
+			PrintWriter writer=response.getWriter();
+			writer.println("Username o password errata");
+			rds.include(request,response);
 		}
 	}
 
